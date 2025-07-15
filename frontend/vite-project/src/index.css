@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The new, animated background for a high-fidelity glass effect */
+body {
+  background-color: #0d1117; /* A solid, very dark base */
+  color: theme('colors.editor-text');
+  overflow: hidden; /* Prevent scrollbars from the animated background */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: color-dodge; /* This creates the vibrant light effect */
+  background-image:
+    radial-gradient(circle at 10% 20%, #8b5cf6, transparent 50%),
+    radial-gradient(circle at 80% 10%, #3b82f6, transparent 50%),
+    radial-gradient(circle at 90% 80%, #ec4899, transparent 50%);
+  animation: bg-pan 15s linear infinite;
+  z-index: -1;
+}
+
+@keyframes bg-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
