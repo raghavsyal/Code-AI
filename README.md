@@ -34,12 +34,19 @@ Code AI is an AI-powered code reviewer that helps developers get instant feedbac
 
 ## 📦 Project Structure
 AI Agent/
+
 ├── backend.py # FastAPI backend serving the AI review endpoint
+
 ├── .env # API keys (not committed to repo)
+
 ├── frontend/ # React + Tailwind frontend
+
 │ ├── src/
+
 │ ├── index.css
+
 │ └── ...
+
 └── README.md
 
 ## 🔧 Setup Instructions
@@ -48,19 +55,24 @@ AI Agent/
 
 bash
 git clone https://github.com/YOUR_USERNAME/Code-AI.git
+
 cd Code-AI
 
 ### 2.Backend + FastAPI
 pip install -r requirements.txt
+
 uvicorn backend:app --reload
 
 ### 3. Frontend
 cd frontend
+
 npm install
+
 npm run dev
 
 ### 4. .env and API
 API_KEY=your_local_or_hosted_ai_model_key
+
 MODEL=mistral # or whichever model you're using
 
 
